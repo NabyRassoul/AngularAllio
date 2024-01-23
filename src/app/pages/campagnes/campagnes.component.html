@@ -1,0 +1,45 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class="col-auto float-right mt-8">
+          <button type="button" class="btn btn-primary mr-2" (click)="open()">Ajouter</button>
+          <button type="button" class="btn btn-secondary" (click)="refresh()">Refresh</button>
+      </div>
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class="card-title">Campagnes</h4>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Nom Campagne</th>
+                  <th>Date Debut</th>
+                  <th>Date Fin</th>
+                  <th>Description</th>
+                  <th>Age Cible</th>
+                  <th>Sexe Cible</th>
+                  <th>Code Promo</th>
+                  <th>Localisation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="cursor: pointer;" *ngFor="let campagne of campagnes" (click)="openCampagne(campagne.id)">
+                  <td>{{campagne.nomCampagne}} SSS</td>
+                  <td>{{campagne.dateDebut}}</td>
+                  <td>{{campagne.dateFin}}</td>
+                  <td>{{campagne.description}}</td>
+                  <td>{{campagne.ageCible}}</td>
+                  <td>{{campagne.sexeCilbe}}</td>
+                  <td>{{campagne.codePromo}}</td>
+                  <td>{{campagne.localisation}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

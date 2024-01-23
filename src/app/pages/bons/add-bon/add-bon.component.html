@@ -1,0 +1,61 @@
+<div class="m-4" style="max-height: 500px;overflow-y: auto;">
+  <form [formGroup]="bonForm" enctype="multipart/form-data">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Date Debut</label>
+      <input type="date" class="form-control" formControlName="dateDebut" id="inputDateDebut">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Date Fin</label>
+      <input type="date" class="form-control" formControlName="dateFin" id="inputDateFin">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Type de Reduction</label>
+      <input type="text" class="form-control" formControlName="typeDeReduction" placeholder="Type de reduction" id="inputType">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Code de Reduction</label>
+      <input type="text" class="form-control" formControlName="codeDeReduction" placeholder="Code de reduction" id="inputCode">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Montant Reduction</label>
+      <input type="text" class="form-control" formControlName="montantDeReduction" placeholder="Montant de reduction" id="inputMontant">
+    </div>
+  </div>
+   <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Quantite</label>
+      <input type="text" class="form-control" formControlName="quantityBon" placeholder="Type de reduction" id="inputType">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Age Cible</label>
+      <select id="inputState" class="form-control" formControlName="ageCible">
+        <option *ngFor="let age of agesCibles" value="{{age}}">{{age}}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Sexe Cible</label>
+      <select id="inputState" class="form-control" formControlName="sexeCible">
+        <option value="M">Hommes</option>
+        <option value="M">Femmes</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Adresse</label>
+    <input type="text" class="form-control" formControlName="localisation" id="inputAddress" placeholder="Dakar, Senegal...">
+  </div>
+  <div class="form-group">
+      <label for="inputAddress">Image</label>
+      <div class="custom-file">
+        <input type="file" formControlName="image" (change)="uploadImage($event.target.files)" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" style="color: black;" for="customFile">Selectionner une image</label>
+      </div>
+  </div>
+  <button type="submit" (click)="addBon()" class="btn btn-primary">Enregistrer</button>
+  <button mat-dialog-close class="btn btn-danger">fermer</button>
+</form>
+</div>
+

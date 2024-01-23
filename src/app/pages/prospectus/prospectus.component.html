@@ -1,0 +1,30 @@
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-auto float-right mt-8">
+        <button type="button" class="btn btn-primary mr-2" (click)="open()">Ajouter</button>
+        <button type="button" class="btn btn-secondary" (click)="refresh()">Refresh</button>
+      </div>
+      <div class="card-header">
+        <h4 class="card-title">Prospectus</h4>
+      </div>
+
+      <!-- Use ngFor to iterate over a collection of data -->
+      <div class="row">
+        <div class="col-md-4" *ngFor="let article of articles">
+          <div class="card mb-4">
+            <img class="card-img-top" src="{{imageUrl}}" alt="Prospectus image">
+            <div class="card-body">
+              <p class="card-text">
+                <strong>Nom :</strong>{{ article.nomArticle }} <br/>
+                <strong>Age Cible :</strong>{{ article.ageCible }}<br/>
+                <strong>Sexe Cible :</strong>{{ article.sexeCilbe }}
+              </p>
+              <i style="cursor: pointer;" (click)="openDeleteDialog(article.id)" class="float-right text-danger tim-icons icon-trash-simple"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
